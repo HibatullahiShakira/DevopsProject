@@ -36,7 +36,7 @@ jobs:
       run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{secrets.DOCKER_HUB_USERNAME}}" --password-stdin
 
     - name: Set up Docker Buildx
-      run: 
+      run: |
         docker buildx create --name multiarch-builder --use
         docker buildx inspect --bootstrap
 
